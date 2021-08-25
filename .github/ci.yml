@@ -1,0 +1,30 @@
+name: website
+on: push
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - name: Install Decentraland Command Line
+        run: npm install -g decentraland@next
+      - name: Create test scene 
+        run: dcl init
+      - name: (temp) install decentraland-ecs PR
+        run: npm install "https://sdk-team-cdn.decentraland.org/@dcl/js-sdk-toolchain/branch/fix/export-working/decentraland-ecs-6.6.6-1167176102.commit-e4f6762.tgz"
+      - name: (temp) install @dcl/kernel PR
+        run: npm install "https://sdk-team-cdn.decentraland.org/@dcl/kernel/branch/feat/update-export-html/dcl-kernel-1.0.0-1167100715.commit-1c732b5.tgz"
+      - name: Build export
+        run: dcl export
+      -
+        name: Deploy to GitHub Pages
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: export
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
