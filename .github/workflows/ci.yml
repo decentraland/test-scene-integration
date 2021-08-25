@@ -18,7 +18,7 @@ jobs:
       - name: (temp) install @dcl/kernel PR
         run: npm install "https://sdk-team-cdn.decentraland.org/@dcl/kernel/branch/feat/update-export-html/dcl-kernel-1.0.0-1167100715.commit-1c732b5.tgz"
       - name: Build export
-        run: dcl export
+        run: dcl export --skip-version-checks
       -
         name: Deploy to GitHub Pages
         if: success()
