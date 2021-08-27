@@ -14,7 +14,7 @@ jobs:
       - name: Create test scene 
         run: yes Y | dcl init
       - name: (temp) install decentraland-ecs PR
-        run: npm install decentraland@ci
+        run: npm install decentraland-ecs@ci
       - name: (temp) install @dcl/kernel PR
         run: npm install "https://sdk-team-cdn.decentraland.org/@dcl/kernel/branch/feat/export-out-of-root-folder/dcl-kernel-1.0.0-1175438210.commit-6a4bf8e.tgz"
       - name: Build export
