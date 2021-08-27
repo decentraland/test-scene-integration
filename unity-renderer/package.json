@@ -1,0 +1,49 @@
+{
+  "_from": "@dcl/unity-renderer@latest",
+  "_id": "@dcl/unity-renderer@1.0.11942-20210827180244.commit-0c945f4",
+  "_inBundle": false,
+  "_integrity": "sha512-GbjKyOx/379C49eKR7WJj/QWLjzuwTXqjTjoXessaCNUAU56AOfFF0IWICfqulT6mVOPhnIR970LcWuYMfR8DA==",
+  "_location": "/@dcl/unity-renderer",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@dcl/unity-renderer@latest",
+    "name": "@dcl/unity-renderer",
+    "escapedName": "@dcl%2funity-renderer",
+    "scope": "@dcl",
+    "rawSpec": "latest",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "/decentraland-ecs"
+  ],
+  "_resolved": "https://registry.npmjs.org/@dcl/unity-renderer/-/unity-renderer-1.0.11942-20210827180244.commit-0c945f4.tgz",
+  "_shasum": "bbfb239d1ca7ba5e718f9e91e675072d7e3de226",
+  "_spec": "@dcl/unity-renderer@latest",
+  "_where": "/home/runner/work/test-scene-integration/test-scene-integration/node_modules/decentraland-ecs",
+  "author": {
+    "name": "Decentraland Contributors"
+  },
+  "branch": "master",
+  "bugs": {
+    "url": "https://github.com/decentraland/unity-renderer/issues"
+  },
+  "bundleDependencies": false,
+  "commit": "0c945f43b89cfa8fa62d49f034d1a9bdd8b946b7",
+  "deprecated": false,
+  "homepage": "https://github.com/decentraland/unity-renderer#readme",
+  "license": "Apache-2.0",
+  "main": "index.js",
+  "name": "@dcl/unity-renderer",
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decentraland/unity-renderer.git"
+  },
+  "typings": "index.d.ts",
+  "version": "1.0.11942-20210827180244.commit-0c945f4"
+}
