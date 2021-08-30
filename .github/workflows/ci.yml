@@ -10,21 +10,23 @@ jobs:
         with:
           node-version: 14.x
       - name: Install Decentraland Command Line
-        run: npm install -g decentraland@next
-      - name: Create test scene 
-        run: yes Y | dcl init
-      - name: (temp) install decentraland-ecs PR
+        run: npm install -g decentraland@latest
+      - name: Get Genesis Plaza Scene
+        run: git clone https://github.com/decentraland-scenes/Genesis-Plaza.git
+      - name:  Install decentraland-ecs
+        working-directory: ./Genesis-Plaza
         run: npm install decentraland-ecs@ci
-      - name: (temp) install @dcl/kernel PR
-        run: npm install "https://sdk-team-cdn.decentraland.org/@dcl/kernel/branch/feat/export-out-of-root-folder/dcl-kernel-1.0.0-1175438210.commit-6a4bf8e.tgz"
+      - name: Install @dcl/kernel
+        working-directory: ./Genesis-Plaza
+        run: npm install @dcl/kernel@next
       - name: Build export
-        run: dcl export --skip-version-checks
-      -
-        name: Deploy to GitHub Pages
+        working-directory: ./Genesis-Plaza
+        run: dcl export
+      - name: Deploy to GitHub Pages
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
         with:
           target_branch: gh-pages
-          build_dir: export
+          build_dir: Genesis-Plaza/export
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
